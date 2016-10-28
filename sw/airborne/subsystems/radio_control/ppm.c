@@ -79,7 +79,7 @@ void radio_control_impl_init(void)
 
 void radio_control_impl_event(void (* _received_frame_handler)(void))
 {
-  if (ppm_frame_available) {
+//  if (ppm_frame_available) {  /* zhanghao comment out */
     radio_control.frame_cpt++;
     radio_control.time_since_last_frame = 0;
     if (radio_control.radio_ok_cpt > 0) {
@@ -90,7 +90,7 @@ void radio_control_impl_event(void (* _received_frame_handler)(void))
       _received_frame_handler();
     }
     ppm_frame_available = false;
-  }
+//  }  /* zhanghao comment out */
 }
 
 /**
